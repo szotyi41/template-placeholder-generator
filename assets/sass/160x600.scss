@@ -1,0 +1,69 @@
+@import "mixins";
+@import "main";
+
+$width:  160px;
+$height: 600px;
+
+.et-banner {
+	width: $width;
+	height: $height;
+	
+	.et-banner-header {
+		height: $height * 0.2;
+	}
+	.et-banner-content {
+		height: $height * 0.4;
+		@include flex_wrap(nowrap);
+	}
+	.et-banner-footer {
+		height: $height * 0.4;
+	}
+
+	.et-stickers {
+		@include flexbox;
+		@include flex-wrap(wrap);
+		@include align-items(flex-start);
+		img {
+			margin: 0 10px;
+		}
+	}
+
+	.et-scene-1 {
+		@include justifyContent(space-between);
+		.et-banner-header {
+			height: 50%;
+		}
+		.et-banner-content {
+			height: 30%;
+		}
+		.et-banner-footer {
+			display: none;
+		}
+	}
+
+	.et-scene-2 {
+		@include justifyContent(space-between);
+		.et-banner-header {
+			height: 60%;
+			@include flex-direction(column-reverse);
+			.et-thumb {
+				height: 50%;
+			}
+		}
+		.et-banner-content .et-heading {
+			padding: 20px;
+		}
+	}
+
+	.et-scene-3 {
+		.et-banner-content {
+			.et-heading {
+				height: 40%;
+			}
+		}
+		.et-banner-footer {
+			height: 25%;
+		}
+	}
+	
+}

@@ -1,0 +1,17 @@
+{
+    "name": "dco/banner-prepare",
+    "authors": [
+        {
+            "name": "Buza Péter",
+            "email": "szotyi41@yahoo.com"
+        }
+    ],
+    "require": {
+        "tedivm/jshrink": "~1.0"
+    },
+    "autoload" : {
+        "psr-4": {
+            "": "app"
+        }
+    }
+}

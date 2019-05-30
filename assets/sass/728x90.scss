@@ -1,0 +1,92 @@
+@import "mixins";
+@import "main";
+
+$width:  728px;
+$height: 90px;
+
+.et-banner {
+	width: $width;
+	height: $height;
+
+	.et-scene {
+		@include flex-wrap(nowrap);
+	  @include flex-direction(row);
+  }
+	
+	.et-banner-header {
+		height: 100%;
+		width: $width * 0.2;
+	}
+	.et-banner-content {
+		height: 100%;
+		width: $width * 0.6;
+		@include flex-wrap(nowrap);
+	  @include flex-direction(row);
+	  @include justify-content(space-around);
+	}
+	.et-banner-footer {
+		width: $width * 0.2;
+		height: 100%;
+		@include align-items(flex-start);
+	}
+
+	.et-thumb {
+		height: 80%;
+		width: auto;
+	}
+
+	.et-heading.et-product {
+		width: 60%;
+		height: 60%;
+		> span {
+			font-size: 0.5em;
+			line-height: 1.4;
+		}
+	}
+
+	.et-price {
+		font-size: 1em;
+		height: 100%;
+		width: 30%;
+	}
+
+	.et-scene-2 {
+		background-position: center bottom;
+		.et-banner-header {
+			width: 50%;
+		}
+		.et-stickers {
+			width: 50%;
+			img {
+				width: 40%;
+			}
+		}
+		.et-heading.et-product {
+			width: 85%;
+		}
+	}
+
+	.et-scene-3 {
+		background-position: center bottom;
+		.et-banner-header {
+			width: 20%;
+		}
+		.et-banner-content {
+			width: 50%;
+		}
+		.et-heading {
+			padding: 0 15px;
+		}
+		.et-banner-footer {
+			@include align-items(center);
+			width: 40%;
+			.et-phone {
+				width: 50%
+			}
+			.et-action {
+				width: 40%;
+			}
+		}
+	}
+	
+}

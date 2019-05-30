@@ -1,0 +1,74 @@
+@import "mixins";
+@import "main";
+
+$width:  640px;
+$height: 360px;
+
+.et-banner {
+	width: $width;
+	height: $height;
+
+	.et-action {
+		@include align-items(flex-end);
+		width: 40%;
+		height: auto;
+		.et-button {
+			min-height: 60px;
+			font-size: 1em;
+			letter-spacing: 0.2em;
+		}
+	}
+
+	.et-phone {
+		width: 40%;
+	}
+
+	.et-heading.et-product {
+		height: 40%;
+	}
+
+	.et-scene-1 {
+		.et-banner-header {
+			height: 230px;
+		}
+		.et-banner-content {
+			height: 130px;
+		}
+		.et-banner-footer {
+			display: none;
+		}
+	}
+
+	.et-scene-2 {
+		@include justifyContent(space-between);
+		.et-banner-header {
+			height: 50%;
+		}
+		.et-banner-content {
+			height: 50%;
+		}
+		.et-stickers {
+			align-items: flex-end;
+		}
+	}
+
+	.et-scene-3 {
+		justify-content: space-between;
+		.et-banner-footer {
+			@include flex-flow(row nowrap);
+			height: 30%;
+		}
+		.et-banner-header {
+			height: 40%;
+		}
+		.et-banner-content {
+			height: 30%;
+		}
+		.et-stickers {
+			align-items: flex-end;
+		}
+	}
+
+
+	
+}

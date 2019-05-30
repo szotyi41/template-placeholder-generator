@@ -1,0 +1,297 @@
+@import "reset";
+@import "milligram";
+@import "animate";
+@import "mixins";
+@import "flexbox";
+
+
+body {
+  font-size: 14px;
+}
+
+.wrap {
+  margin: 10px;
+  display: block;
+  float: left;
+}
+
+.et-banner {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.et-scene {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  //opacity: 0;
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(space-around);
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    @include linear_gradient(rgba(0,0,0,0.8),transparent);
+  }
+}
+
+.et-thumb {
+  height: auto;
+  width: auto;
+  max-height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.et-image {
+  width: auto;
+  height: 100%;
+  display: block;
+}
+
+.et-heading {
+  width: 100%;
+  height: auto;
+  line-height: 1.5;
+  max-height: 120px;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.et-product {
+  font-weight: 500;
+  text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.et-strong {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.et-price {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  font-weight: 500;
+  line-height: 1.2;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  strong {
+    font-weight: 500;
+    color: red;
+    white-space: nowrap;
+  }
+}
+
+.et-cta {
+  width: 100%;
+  height: auto;
+  button {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    border: 0;
+    border-radius: 3px;
+  }
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.et-stickers {
+  height: auto;
+  width: 100%;
+  img {
+    height: auto;
+    max-width: 100%;
+    margin: 0 5px;
+  }
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  //display: none;
+}
+
+.et-slogan, .et-product {
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 0 0 20px rgba(0,0,0,0.5);
+  color: #fff;
+  background-color: #4b7f37;
+  border-radius: 5px;
+}
+
+.et-action {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  height: 50%;
+  max-height: none;
+  .et-button {
+    border-radius: 5px;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    line-height: 50px;
+    //min-height: 40px;
+    padding: 0;
+    font-size: 0.8em;
+    font-weight: 500;
+    background-color: #f49600;
+    border: 0;
+    @include transitionn(0.5s);
+    &:hover {
+      @include scale(1.1);
+    }
+  }
+}
+
+.et-phone {
+  background-color: #f49600;
+  border-radius: 5px;
+  font-weight: 500;
+  min-height: 50px;
+  line-height: 50px;
+  width: 85%;
+}
+
+  .et-banner-header {
+    width: 100%;
+    //height: $height / 3;
+    //background-color: yellow;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .et-thumb {
+      width: 80%;
+      height: 80%;
+      display: block;
+      max-height: none;
+      display: flex;
+      img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+      }
+    }
+  }
+  .et-banner-content {
+    width: 100%;
+    //height: $height / 3;
+    //background-color: red;
+    z-index: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    @include flex_wrap(nowrap);
+    .et-heading {
+      display: flex;
+      height: 60%;
+      max-height: none;
+      width: 85%;
+    }
+    .et-price {
+      display: flex;
+      height: 40%;
+      max-height: none;
+      width: 90%;
+      font-size: 20px;
+      strike, strong {
+        display: inline-block;
+        white-space: nowrap;
+        margin: 0 2px;      
+      }
+    }
+  }
+  .et-banner-footer {
+    width: 100%;
+    //height: $height / 3;
+    // background-color: green;
+    display: flex !important;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    
+    .et-stickers {
+      @include flexbox;
+      height: 50%;
+      width: 85%;
+      display: none;
+    }
+  }
+
+//.et-scene-2, .et-scene-1 { opacity: 0; }
+
+/*
+@import "1000x600";
+@import "120x400";
+@import "120x600";
+@import "160x290";
+@import "160x600";
+@import "200x200";
+@import "208x223";
+@import "214x200";
+@import "250x250";
+@import "290x400";
+@import "290x600";
+@import "300x250";
+@import "300x300";
+@import "300x600";
+@import "310x250";
+@import "320x160";
+@import "320x320";
+@import "320x50";
+@import "320x80";
+@import "336x280";
+@import "468x120";
+@import "468x60";
+@import "480x120";
+@import "480x240";
+@import "480x480";
+@import "600x120";
+@import "640x200";
+@import "640x360";
+@import "640x450";
+@import "728x90";
+@import "800x500";
+@import "800x600";
+@import "965x100";
+@import "970x250";
+@import "970x70";
+@import "970x90";
+@import "980x100";
+@import "980x90";
+*/
